@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mail For Love</title>
+    <style>
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f8ffae 0%, #43c6ac 100%);
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            max-width: 400px;
+            margin: 0 auto;
+            
+        }
+        .open-btn {
+            padding: 18px 40px;
+            font-size: 1.3rem;
+            border: none;
+            border-radius: 30px;
+            background: linear-gradient(90deg, #ff758c 0%, #ff7eb3 100%);
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 4px 24px rgba(255, 117, 140, 0.2);
+            transition: transform 0.15s, box-shadow 0.15s;
+            outline: none;
+            margin-top:400px;
+        }
+        .open-btn:hover, .open-btn:focus {
+            transform: scale(1.05);
+            box-shadow: 0 6px 32px rgba(255, 117, 140, 0.3);
+        }
+        .letter {
+            margin-top: 30px;
+            max-width: 350px;
+            width: 90vw;
+            background: white;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(67, 198, 172, 0.15);
+            padding: 28px 22px;
+            font-size: 1.1rem;
+            color: #333;
+            opacity: 0;
+            transform: translateY(40px) scale(0.95);
+            pointer-events: none;
+            transition: opacity 0.4s cubic-bezier(.4,2,.6,1), transform 0.4s cubic-bezier(.4,2,.6,1);
+        }
+        .letter.show {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
+        @media (max-width: 600px) {
+            .open-btn {
+                font-size: 1rem;
+                padding: 14px 24px;
+            }
+            .letter {
+                font-size: 1rem;
+                padding: 18px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="open-btn" id="openLetterBtn">Nhấn để mở thư 💌</button>
+        <div class="letter" id="letterContent">
+            <h2 style="margin-top:0;color:#ff758c;">Gửi đến em iu cụa dppp </h2>
+            <p>
+                Chào em,<br>
+                <br>
+                Có thể em không biết, nhưng em là người rất quan trọng đối với anh.<br>
+                Anh rất vui vì đã gặp được em, người đã mang đến cho anh những khoảnh khắc tuyệt vời và những kỷ niệm đáng nhớ.<br>
+                <br>
+                Anh biết rằng tình yêu của chúng ta còn nhiều điều chưa hoàn hảo, nhưng anh tin rằng với thời gian và sự nỗ lực, chúng ta sẽ cùng nhau vượt qua mọi thử thách.<br>
+                Anh trân trọng từng khoảnh khắc bên em, từ những cuộc trò chuyện nhỏ, từ những giây phút vui vẻ đến những lúc khó khăn.<br> 
+                <br>
+                Anh muốn gửi đến em một lời cảm ơn chân thành vì đã luôn bên cạnh anh.<br>
+                Cảm ơn em đã làm cho cuộc sống của anh trở nên tươi đẹp hơn, đã mang đến cho anh niềm vui và hạnh phúc.<br>
+                <br>
+                Anh biết rằng đôi khi anh có thể không hoàn hảo, nhưng anh sẽ luôn cố gắng để trở thành người tốt hơn vì em.<br>
+                Anh sẽ luôn ở đây, bên cạnh em, để cùng nhau vượt qua mọi khó khăn và xây dựng một tương lai tốt đẹp hơn.<br>
+                <br>
+                Anh muốn gửi đến em một lời hứa: anh sẽ luôn yêu thương và trân trọng em, sẽ luôn là người bạn đồng hành đáng tin cậy của em.<br>
+                Anh sẽ luôn nỗ lực để làm cho em hạnh phúc, để mang đến cho em những điều tốt đẹp nhất.<br>
+                <br>
+                Anh biết rằng tình yêu của chúng ta có thể không hoàn hảo, nhưng anh tin rằng với sự chân thành và nỗ lực, chúng ta sẽ cùng nhau vượt qua mọi thử thách.<br>
+                Anh sẽ luôn là người bạn đồng hành đáng tin cậy của em, sẽ luôn ở đây để lắng nghe và chia sẻ những niềm vui, nỗi buồn cùng em.<br>
+                <br>
+                Cảm ơn em đã luôn ở bên, chia sẻ và động viên anh trong mọi hoàn cảnh, chấp nhận và yêu anh dù cho chuyện tình mình còn nhiều thiếu xót.<br>
+                <br>
+                Chúc em luôn vui vẻ, hạnh phúc và thành công trên con đường phía trước!<br>
+                Nhớ là phải bên anh lâu thật lâuuuuu, cảm ơn em vì đã đến bên anh.<br>
+                <br>
+                <span style="color:#ff7eb3;">Yêu thương emmm nhiều 💖</span>
+            </p>
+        </div>
+    </div>
+    <script>
+        const btn = document.getElementById('openLetterBtn');
+        const letter = document.getElementById('letterContent');
+        btn.addEventListener('click', () => {
+            letter.classList.add('show');
+            btn.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
